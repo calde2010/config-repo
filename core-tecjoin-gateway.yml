@@ -7,13 +7,15 @@ eureka:
       defaultZone: http://localhost:8099/eureka/
 
 spring:
+  application:
+    name: core-tecjoin-gateway
   cloud:
     gateway:
       discovery:
         locator:
           enabled: true
       routes:
-        - id: core-tecjoin-gateway
+        - id: gateway
           uri: lb://client-service
           predicates:
-            - Path=/engine/**
+            - Path=/gateway/**
