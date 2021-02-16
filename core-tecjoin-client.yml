@@ -6,6 +6,13 @@ server:
     include-message: always
     include-binding-errors: always
 spring:
+  application:
+    name: client-service
+  cloud:
+    config:
+      uri: http://localhost:8099
+      username: root
+      password: s3cr3t
   # ===============================
   # DB
   # ===============================

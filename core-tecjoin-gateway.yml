@@ -8,6 +8,13 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8099/eureka/
 spring:
+  application:
+    name: gateway
+      cloud:
+  config:
+      uri: http://localhost:8099
+      username: root
+      password: s3cr3t
   cloud:
     gateway:
       discovery:
