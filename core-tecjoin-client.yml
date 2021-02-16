@@ -7,7 +7,7 @@ server:
     include-binding-errors: always
 spring:
   application:
-    name: gateway-service
+    name: client-service
   cloud:
     config:
       uri: http://localhost:8099
