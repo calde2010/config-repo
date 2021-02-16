@@ -23,4 +23,4 @@ spring:
         - id: client-service
           uri: lb://client-service
           predicates:
-            - Path=/gateway/**
+            - Path=/**
