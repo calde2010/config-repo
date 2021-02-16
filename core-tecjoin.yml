@@ -1,0 +1,60 @@
+#Application Configuration
+server:
+  port: ${PORT:0}
+  error:
+    include-message: always
+    include-binding-errors: always
+
+# To See H2 Console in Browser:
+# http://localhost:8092/h2-console
+# Enabling H2 Console
+spring:
+  profiles:
+    active: "dev"
+  main:
+    banner-mode: "off"
+    
+  application:
+    name: facturacion-service
+  cloud:
+    config:
+      uri: http://localhost:8099
+      username: root
+      password: s3cr3t
+  # ===============================
+  # DB
+  # ===============================
+  datasource:
+    url: jdbc:postgresql://localhost:5432/nico_bd
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: admin
+
+  # ===============================
+  # JPA / HIBERNATE
+  # ===============================
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: false
+        format_sql: true
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8099/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
