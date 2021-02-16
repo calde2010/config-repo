@@ -15,7 +15,7 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: client-service
-          uri: lb://client-service
+        - id: facturacion-service
+          uri: lb://facturacion-service
           predicates:
             - Path=/gateway/**
