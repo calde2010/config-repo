@@ -9,18 +9,6 @@ server:
 # http://localhost:8092/h2-console
 # Enabling H2 Console
 spring:
-  profiles:
-    active: "dev"
-  main:
-    banner-mode: "off"
-    
-  application:
-    name: facturacion-service
-  cloud:
-    config:
-      uri: http://localhost:8099
-      username: root
-      password: s3cr3t
   # ===============================
   # DB
   # ===============================
