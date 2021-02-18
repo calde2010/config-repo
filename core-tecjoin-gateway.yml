@@ -16,6 +16,20 @@ spring:
       password: s3cr3t
   cloud:
     gateway:
+      default-filters:
+          - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin, RETAIN_UNIQUE
+      globalcors:
+       add-to-simple-url-handler-mapping: true
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: 
+             - "http://localhost:4200/"
+            allowCredentials: true
+            allowedMethods:
+            - GET
+            - POST
+            - DELETE
+            - PUT
       discovery:
         locator:
           enabled: true
