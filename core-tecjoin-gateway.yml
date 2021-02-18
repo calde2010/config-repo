@@ -34,3 +34,5 @@ spring:
           uri: lb://client-service
           predicates:
             - Path=/**
+          filters:
+            - AddResponseHeader=Access-Control-Allow-Origin, *
