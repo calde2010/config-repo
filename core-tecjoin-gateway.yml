@@ -16,15 +16,6 @@ spring:
       password: s3cr3t
   cloud:
     gateway:
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: "*"
-            allowedMethods:
-            - GET
-            - POST
-            - DELETE
-            - PUT
       discovery:
         locator:
           enabled: true
