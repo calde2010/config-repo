@@ -14,18 +14,8 @@ spring:
       uri: http://localhost:8099
       username: root
       password: s3cr3t
-  cloud:
-    gateway:
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: "*"
-            allowedMethods: "*"
-      discovery:
-        locator:
-          enabled: true
-      routes:
-        - id: client-service
-          uri: lb://client-service
-          predicates:
-            - Path=/**
+zuul:
+  routes:
+    foos:
+      path: /**
+      url: http://localhost:8082
