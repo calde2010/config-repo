@@ -21,10 +21,10 @@ spring:
   # DB
   # ===============================
   datasource:
-    url: jdbc:postgresql://34.123.243.196:5432/nico_bd
+    url: jdbc:postgresql://localhost:5432/nico_bd
     driverClassName: org.postgresql.Driver
     username: postgres
-    password: Bogota2021*
+    password: Bogota2021
 
   # ===============================
   # JPA / HIBERNATE
